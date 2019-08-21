@@ -11,4 +11,4 @@
 * visit `http://localhost:3000`
 
 ## Issue
-If there is query that polls new data, another query will reaturn error "undefined" on rerender
+If there is query that polls new data, another query will return error "undefined" on rerender
