@@ -1,8 +1,8 @@
-// import React from 'react';
-import gql from 'graphql-tag';
-import { useQuery } from 'react-apollo';
+import React from "react";
+import gql from "graphql-tag";
+import { useQuery } from "react-apollo";
 
-import './App.css';
+import "./App.css";
 
 const ERROR_QUERY = gql`
   {
@@ -18,19 +18,20 @@ const TIME_QUERY = gql`
   }
 `;
 
-const useTime = () =>
-  useQuery(TIME_QUERY, {
-    pollInterval: 2000,
-  });
+const logs = [];
 
 const App = () => {
   const { loading, error } = useQuery(ERROR_QUERY);
-  // eslint-disable-next-line
-  useTime();
+
+  useQuery(TIME_QUERY, {
+    pollInterval: 2000
+  });
 
   console.log({ loading, error });
 
-  return JSON.stringify({ loading, error: String(error) });
+  logs.push(JSON.stringify({ loading, error: String(error) }));
+
+  return logs.map(log => <div>{log}</div>);
 };
 
 export default App;
