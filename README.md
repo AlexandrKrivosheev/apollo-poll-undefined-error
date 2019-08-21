@@ -4,7 +4,7 @@
 
 ## Installation
 
-* `git clone git@github.com:the-road-to-graphql/react-apollo-client-example.git`
+* `git clone https://github.com/AlexandrKrivosheev/apollo-poll-undefined-error-example.git`
 * cd apollo-poll-undefined-error-example
 * npm install
 * npm start
